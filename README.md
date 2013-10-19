@@ -1,0 +1,4 @@
+mediocre.js
+===========
+
+javascript mediator
