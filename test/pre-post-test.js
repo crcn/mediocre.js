@@ -20,7 +20,7 @@ describe("pre/post#", function() {
   });
 
 
-  it("can chain tests together", function (next) {
+  it("can chain commands together", function (next) {
 
     var buffer = "";
 
