@@ -28,17 +28,8 @@ class Mediator
       listener = @_listeners[nameParts.name] = { pre: [], post: [] }
 
     # first map all the listeners, then wrap all the listeners in one function (collection)
-    listeners = listenerCollection.create { 
-        mediator: @, 
-        options: listeners.map((listener) => 
-          fn = factory.create({ mediator: @, options: listener }) 
+    listeners = factory.create @, listeners
 
-          unless fn
-            throw new Error "unable to identify listener '#{fn}'"
-          fn
-        )
-    }
-    
     # pre / post hook?
     if nameParts.type
       collection = listener[nameParts.type]

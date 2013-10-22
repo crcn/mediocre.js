@@ -2,13 +2,13 @@ type  = require "type-component"
 async = require "async"
 
 module.exports = 
-  test   : (options) -> type(options.options) is "object"
+  test   : (options) -> type(options.listener) is "object"
   create : (options) ->
 
-    names = Object.keys(options.options)
+    refs     = Object.keys(options.listener)
     mediator = options.mediator
 
-    (message, next) -> 
-      async.eachSeries names, ((name, next) ->
-        mediator.execute(name, names.child(name), next)
+    (message, next) ->
+      async.eachSeries refs, ((ref, next) ->
+        mediator.execute(message.child(ref, options.listener[ref]), next)
       ), next

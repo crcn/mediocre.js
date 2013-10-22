@@ -53,6 +53,6 @@ describe("pre/post#", function() {
     mediator.execute("test", function() {
       expect(buffer).to.be("ab");
       next();
-    })
+    });
   });
 });

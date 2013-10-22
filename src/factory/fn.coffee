@@ -1,10 +1,10 @@
 type = require "type-component"
 
 module.exports = 
-  test: (options) -> type(options.options) is "function"
+  test: (options) -> type(options.listener) is "function"
   create: (options) -> 
 
-    fn = options.options
+    fn = options.listener
 
     (message, next) ->
       fn message, (err, args...) ->
