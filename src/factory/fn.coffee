@@ -10,5 +10,5 @@ module.exports =
       fn message, (err, args...) ->
         return next(err) if err?
         if args.length
-          message.args = args
+          message.root.args = args
         next()
