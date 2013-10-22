@@ -1,3 +1,5 @@
+### Mediocre.js [![Alt ci](https://travis-ci.org/classdojo/mediocre.js.png)](https://travis-ci.org/classdojo/mediocre.js)
+
 Mediocre is a lightweight JavaScript mediator. 
 
 ### Features
