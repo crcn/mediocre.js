@@ -19,6 +19,25 @@ describe("pre/post#", function() {
     mediator.execute("test", next);
   });
 
+
+  it("can chain tests together", function (next) {
+
+    var buffer = "";
+
+    mediator.on("a", function(message, next) {
+      buffer += "a";
+      next();
+    }, function(message, next) {
+      buffer += "b";
+      next();
+    })
+
+    mediator.execute("a", function() {
+      expect(buffer).to.be("ab");
+      next();
+    })
+  });
+
   it("can add pre hooks onto a listener", function(next) {
     var buffer = "";
     mediator.on("pre test", function(message, next) {
