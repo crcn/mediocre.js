@@ -1,6 +1,8 @@
-Command = require "./message"
-factory = require "./factory"
+Message            = require "./message"
+factory            = require "./factory"
 listenerCollection = require "./factory/collection"
+type               = require "type-component"
+async              = require "async"
 
 class Mediator
 
@@ -10,24 +12,39 @@ class Mediator
   constructor: () ->
     @_listeners = {}
 
+
   ###
   ###
 
-  on: (name, listeners...) ->
-    nameParts = @_parse name
+  on: (nameOrPlugin, listeners...) ->
 
-    unless @_listeners[nameParts.name]
-      @_listeners[nameParts.name] = { pre: [], post: [] }
+    # might be a plugin for other listeners
+    if nameOrPlugin.test
+      return factory.push nameOrPlugin
+
+    nameParts = @_parse nameOrPlugin
+
+    unless listener = @_listeners[nameParts.name]
+      listener = @_listeners[nameParts.name] = { pre: [], post: [] }
 
     # first map all the listeners, then wrap all the listeners in one function (collection)
-    listeners = listenerCollection.create { mediator: @, options: listeners.map((listener) -> factory.create({ mediator: @, options: @})) }
+    listeners = listenerCollection.create { 
+        mediator: @, 
+        options: listeners.map((listener) => 
+          fn = factory.create({ mediator: @, options: listener }) 
 
+          unless fn
+            throw new Error "unable to identify listener '#{fn}'"
+          fn
+        )
+    }
+    
     # pre / post hook?
     if nameParts.type
-      collection = @_listeners nameParts.type
+      collection = listener[nameParts.type]
       collection.push listeners
     else
-      @_listeners.callback = listeners
+      listener.callback = listeners
 
 
     # disposes the listener
@@ -60,12 +77,20 @@ class Mediator
       next = data
 
 
-    listener = @_listeners[cmd.name]
+    if arguments.length is 2 and type(data) is "function"
+      next = data
+
+
+    if type(next) isnt "function"
+      next = () ->
+
+    listener = @_listeners[msg.name]
 
     if not listener or not listener.callback
-      return next new Error "message '#{cmd.name}' doesn't exist"
+      return next new Error "listener '#{msg.name}' doesn't exist"
 
-    chain = listeners.pre.concat(listener.callback).concat(listeners.post)
+
+    chain = listener.pre.concat(listener.callback).concat(listener.post)
 
     async.eachSeries chain, ((listener, next) ->
       listener msg, next
@@ -80,9 +105,9 @@ class Mediator
   _parse: (message) ->
     messageParts = message.split " "
     name = messageParts.pop()
-    type = messageParts.pop() # pre? post?
+    t = messageParts.pop() # pre? post?
 
-    { type: type, name: name }
+    { type: t, name: name }
 
 
 

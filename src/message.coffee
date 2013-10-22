@@ -9,6 +9,7 @@ class Message
   ###
 
   constructor: (@name, @data, @options = {}, @parent = undefined) ->
+    @args = []
 
   ###
   ###

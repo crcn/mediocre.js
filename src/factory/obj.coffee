@@ -8,7 +8,7 @@ module.exports =
     names = Object.keys(options.options)
     mediator = options.mediator
 
-    (message, next) ->  
+    (message, next) -> 
       async.eachSeries names, ((name, next) ->
         mediator.execute(name, names.child(name), next)
       ), next

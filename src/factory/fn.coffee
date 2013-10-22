@@ -1,7 +1,7 @@
 type = require "type-component"
 
 module.exports = 
-  test: (options) -> type(options.options) is "fn"
+  test: (options) -> type(options.options) is "function"
   create: (options) -> 
 
     fn = options.options
