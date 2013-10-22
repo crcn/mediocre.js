@@ -1,69 +1,54 @@
+Mediocre is a lightweight JavaScript mediator. 
+
 ### Features
 
-- pre-hooks
-- post-hooks
-- 
+- ability to add pre / post hooks
+- ability to call commands with options (see below)
 
 ```javascript
-
 var mediator = require("mediocre")();
 
+mediator.on("validate", function (message, next) {
+    for(var param in message.options) {
+      //validate fields against message.data
+    }
+});
 
-
-mediator.on("validate", function (command, next) {
-  //validate 
-  command.paren.
+//login helper
+mediator.on("login", function (message, next) {
+  console.log(message.data);
 });
 
 
-//mediator.on(commandName, preHook, preHook, ...., commandName, fn, postHook, postHook);
+//add pre-hook into login to validate fields
+mediator.on("pre login", { validate: { username: "string", password: "string" }});
+```
 
 
+## API
 
-//
-mediator.on("login", { validate: { username: "string" });
+### mediator.on(event, listeners...)
 
+adds a listener
 
+### mediator.execute(listener[, data][, callback])
 
+executes a command
 
+### message mediator.message(name[, data][, options])
 
-//validate, then login
-mediator.on({ 
-  validate: { 
-    username: "string",
-    password: "string"
-    } 
-  }, "login", function (command, next) {
-  // login
+creates a new message option to dispatch
+
+```javascript
+mediator.on("hello", function(message, options) {
+  console.log(message.options.message); // world!
 });
 
+mediator.on("sayHelloWorld", { hello: { message: "world!" }});
 
+//executes hello with options world
+mediator.execute(mediator.message("hello", null, { message: "world!" }));
 
-mediator.on("pre initialize", "checkSession", function(err) {
-  
-});
-
-
-mediator.on("checkSession", function(command, next) {
-  // ajaxRequest
-  if(!session) return next(new Error("access denied")) ;
-  
-  next();
-});
-
-
-mediator.execute("login", , function(err, result) {
-  
-});
-
-
-mediator.on("pre login", funciton (command, next) {
-  // pre login hook
-});
-
-mediator.on("post login", function (command, next) {
-  // post login hook
-});
-
-
+//same as above command
+mediator.execute("sayHelloWorld"); 
 ```

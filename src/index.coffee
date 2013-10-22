@@ -48,6 +48,11 @@ class Mediator
   ###
   ###
 
+  message: (name, data, options = {}) -> new Message name, data, options
+
+  ###
+  ###
+
   once: (name, listeners...) ->
 
     listeners.unshift (message, next) ->
