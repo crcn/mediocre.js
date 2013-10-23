@@ -48,7 +48,7 @@ class Mediator
   ###
   ###
 
-  message: (name, data, options = {}) -> new Message name, data, options
+  message: (name, data, options = {}) -> new Message name, data, options, @
 
   ###
   ###
@@ -67,7 +67,7 @@ class Mediator
   execute: (nameOrMessage, data, next) ->
 
     unless nameOrMessage.__isCommand
-      msg = new Message(nameOrMessage, data)
+      msg = @message(nameOrMessage, data)
     else
       msg  = nameOrMessage
       next = data

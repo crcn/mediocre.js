@@ -20,6 +20,15 @@ describe("pre/post#", function() {
   });
 
 
+  it("keeps a reference to the mediator", function(next) {
+    mediator.on("test", function(message, next) {
+      expect(message.mediator).to.be(mediator);
+      next();
+    });
+    mediator.execute("test", next);
+  });
+
+
   it("can chain commands together", function (next) {
 
     var buffer = "";

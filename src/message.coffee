@@ -8,14 +8,14 @@ class Message
   ###
   ###
 
-  constructor: (@name, @data, @options = {}, @parent = undefined) ->
+  constructor: (@name, @data, @options = {}, @mediator, @parent = undefined) ->
     @args = []
     @root = if @parent then @parent.root else @
 
   ###
   ###
 
-  child: (name, options) -> new Message name, @data, options, @
+  child: (name, options) -> new Message name, @data, options, @mediator, @
 
 
 
