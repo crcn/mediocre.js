@@ -80,10 +80,10 @@ class Mediator
     if type(next) isnt "function"
       next = () ->
 
-    listener = @_listeners[msg.name]
+    listener = @_listeners[msg.name] or {}
 
 
-    chain = listener.pre.concat(listener.callback || []).concat(listener.post)
+    chain = (listener.pre || []).concat(listener.callback || []).concat(listener.post || [])
 
     async.eachSeries chain, ((listener, next) ->
       listener msg, next
