@@ -82,11 +82,8 @@ class Mediator
 
     listener = @_listeners[msg.name]
 
-    if not listener or not listener.callback
-      return next new Error "listener '#{msg.name}' doesn't exist"
 
-
-    chain = listener.pre.concat(listener.callback).concat(listener.post)
+    chain = listener.pre.concat(listener.callback || []).concat(listener.post)
 
     async.eachSeries chain, ((listener, next) ->
       listener msg, next

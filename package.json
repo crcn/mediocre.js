@@ -1,6 +1,6 @@
 {
   "name": "mediocre",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "- pre-hooks - post-hooks -",
   "main": "./lib/index.js",
   "scripts": {
