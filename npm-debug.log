@@ -1,0 +1,167 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.21
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/craig/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/tmp.tgz
+12 verbose folder .
+13 silly lockFile 1f1177db-tar tar://.
+14 verbose lock tar://. /Users/craig/.npm/1f1177db-tar.lock
+15 silly lockFile 1e6aaaf6-3348-0-04256124375388026-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/tmp.tgz
+16 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/tmp.tgz /Users/craig/.npm/1e6aaaf6-3348-0-04256124375388026-tmp-tgz.lock
+17 silly lockFile 1f1177db-tar tar://.
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1e6aaaf6-3348-0-04256124375388026-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/tmp.tgz
+20 silly lockFile 1e6aaaf6-3348-0-04256124375388026-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/tmp.tgz
+21 verbose tar unpack /var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/tmp.tgz
+22 silly lockFile 668aed9e-3348-0-04256124375388026-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/package
+23 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/package /Users/craig/.npm/668aed9e-3348-0-04256124375388026-package.lock
+24 silly lockFile 1e6aaaf6-3348-0-04256124375388026-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/tmp.tgz
+25 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/tmp.tgz /Users/craig/.npm/1e6aaaf6-3348-0-04256124375388026-tmp-tgz.lock
+26 silly gunzTarPerm modes [ '755', '644' ]
+27 silly gunzTarPerm extractEntry package.json
+28 silly gunzTarPerm extractEntry .npmignore
+29 silly gunzTarPerm extractEntry README.md
+30 silly gunzTarPerm extractEntry .travis.yml
+31 silly gunzTarPerm extractEntry lib/index.js
+32 silly gunzTarPerm extractEntry lib/message.js
+33 silly gunzTarPerm extractEntry lib/factory/collection.js
+34 silly gunzTarPerm extractEntry lib/factory/fn.js
+35 silly gunzTarPerm extractEntry lib/factory/index.js
+36 silly gunzTarPerm extractEntry lib/factory/obj.js
+37 silly gunzTarPerm extractEntry lib/factory/ref.js
+38 silly gunzTarPerm extractEntry makefile
+39 silly gunzTarPerm extractEntry src/factory/collection.coffee
+40 silly gunzTarPerm extractEntry src/factory/fn.coffee
+41 silly gunzTarPerm extractEntry src/factory/index.coffee
+42 silly gunzTarPerm extractEntry src/factory/obj.coffee
+43 silly gunzTarPerm extractEntry src/factory/ref.coffee
+44 silly gunzTarPerm extractEntry src/index.coffee
+45 silly gunzTarPerm extractEntry src/message.coffee
+46 silly gunzTarPerm extractEntry test/array-test.js
+47 silly gunzTarPerm extractEntry test/obj-test.js
+48 silly gunzTarPerm extractEntry test/pre-post-test.js
+49 silly lockFile 668aed9e-3348-0-04256124375388026-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/package
+50 silly lockFile 668aed9e-3348-0-04256124375388026-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/package
+51 silly lockFile 1e6aaaf6-3348-0-04256124375388026-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/tmp.tgz
+52 silly lockFile 1e6aaaf6-3348-0-04256124375388026-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/tmp.tgz
+53 verbose tar pack [ '/Users/craig/.npm/mediocre/0.0.2/package.tgz',
+53 verbose tar pack   '/var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/package' ]
+54 verbose tarball /Users/craig/.npm/mediocre/0.0.2/package.tgz
+55 verbose folder /var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/package
+56 silly lockFile 668aed9e-3348-0-04256124375388026-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/package
+57 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/package /Users/craig/.npm/668aed9e-3348-0-04256124375388026-package.lock
+58 silly lockFile c332bcc7-g-npm-mediocre-0-0-2-package-tgz tar:///Users/craig/.npm/mediocre/0.0.2/package.tgz
+59 verbose lock tar:///Users/craig/.npm/mediocre/0.0.2/package.tgz /Users/craig/.npm/c332bcc7-g-npm-mediocre-0-0-2-package-tgz.lock
+60 silly lockFile 668aed9e-3348-0-04256124375388026-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/package
+61 silly lockFile 668aed9e-3348-0-04256124375388026-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-14752-_KbbQ-Ji/1384786653348-0.04256124375388026/package
+62 silly lockFile c332bcc7-g-npm-mediocre-0-0-2-package-tgz tar:///Users/craig/.npm/mediocre/0.0.2/package.tgz
+63 silly lockFile c332bcc7-g-npm-mediocre-0-0-2-package-tgz tar:///Users/craig/.npm/mediocre/0.0.2/package.tgz
+64 silly lockFile 01acaaec-craig-npm-mediocre-0-0-2-package /Users/craig/.npm/mediocre/0.0.2/package
+65 verbose lock /Users/craig/.npm/mediocre/0.0.2/package /Users/craig/.npm/01acaaec-craig-npm-mediocre-0-0-2-package.lock
+66 silly lockFile 01acaaec-craig-npm-mediocre-0-0-2-package /Users/craig/.npm/mediocre/0.0.2/package
+67 silly lockFile 01acaaec-craig-npm-mediocre-0-0-2-package /Users/craig/.npm/mediocre/0.0.2/package
+68 verbose tar unpack /Users/craig/.npm/mediocre/0.0.2/package.tgz
+69 silly lockFile 9da97ef2-craig-npm-mediocre-0-0-2-package tar:///Users/craig/.npm/mediocre/0.0.2/package
+70 verbose lock tar:///Users/craig/.npm/mediocre/0.0.2/package /Users/craig/.npm/9da97ef2-craig-npm-mediocre-0-0-2-package.lock
+71 silly lockFile c332bcc7-g-npm-mediocre-0-0-2-package-tgz tar:///Users/craig/.npm/mediocre/0.0.2/package.tgz
+72 verbose lock tar:///Users/craig/.npm/mediocre/0.0.2/package.tgz /Users/craig/.npm/c332bcc7-g-npm-mediocre-0-0-2-package-tgz.lock
+73 silly gunzTarPerm modes [ '755', '644' ]
+74 silly gunzTarPerm extractEntry package.json
+75 silly gunzTarPerm extractEntry .npmignore
+76 silly gunzTarPerm extractEntry README.md
+77 silly gunzTarPerm extractEntry .travis.yml
+78 silly gunzTarPerm extractEntry lib/index.js
+79 silly gunzTarPerm extractEntry lib/message.js
+80 silly gunzTarPerm extractEntry lib/factory/collection.js
+81 silly gunzTarPerm extractEntry lib/factory/fn.js
+82 silly gunzTarPerm extractEntry lib/factory/index.js
+83 silly gunzTarPerm extractEntry lib/factory/obj.js
+84 silly gunzTarPerm extractEntry lib/factory/ref.js
+85 silly gunzTarPerm extractEntry makefile
+86 silly gunzTarPerm extractEntry src/factory/collection.coffee
+87 silly gunzTarPerm extractEntry src/factory/fn.coffee
+88 silly gunzTarPerm extractEntry src/factory/index.coffee
+89 silly gunzTarPerm extractEntry src/factory/obj.coffee
+90 silly gunzTarPerm extractEntry src/factory/ref.coffee
+91 silly gunzTarPerm extractEntry src/index.coffee
+92 silly gunzTarPerm extractEntry src/message.coffee
+93 silly gunzTarPerm extractEntry test/array-test.js
+94 silly gunzTarPerm extractEntry test/obj-test.js
+95 silly gunzTarPerm extractEntry test/pre-post-test.js
+96 silly lockFile 9da97ef2-craig-npm-mediocre-0-0-2-package tar:///Users/craig/.npm/mediocre/0.0.2/package
+97 silly lockFile 9da97ef2-craig-npm-mediocre-0-0-2-package tar:///Users/craig/.npm/mediocre/0.0.2/package
+98 silly lockFile c332bcc7-g-npm-mediocre-0-0-2-package-tgz tar:///Users/craig/.npm/mediocre/0.0.2/package.tgz
+99 silly lockFile c332bcc7-g-npm-mediocre-0-0-2-package-tgz tar:///Users/craig/.npm/mediocre/0.0.2/package.tgz
+100 verbose chmod /Users/craig/.npm/mediocre/0.0.2/package.tgz 644
+101 verbose chown /Users/craig/.npm/mediocre/0.0.2/package.tgz [ 501, 20 ]
+102 silly lockFile 3a52ce78- .
+103 silly lockFile 3a52ce78- .
+104 silly publish { name: 'mediocre',
+104 silly publish   version: '0.0.2',
+104 silly publish   description: '- pre-hooks - post-hooks -',
+104 silly publish   main: './lib/index.js',
+104 silly publish   scripts: { test: 'mocha --recursive --timeout 100' },
+104 silly publish   repository:
+104 silly publish    { type: 'git',
+104 silly publish      url: 'git://github.com/classdojo/mediocre.js.git' },
+104 silly publish   author: '',
+104 silly publish   license: 'BSD',
+104 silly publish   readmeFilename: 'README.md',
+104 silly publish   gitHead: '09cf1f2cbb07469f0ef1f2c57b29359c6e487c61',
+104 silly publish   dependencies:
+104 silly publish    { 'type-component': '0.0.1',
+104 silly publish      async: '~0.2.9',
+104 silly publish      factories: '0.0.5',
+104 silly publish      'bindable-call': '0.0.3' },
+104 silly publish   devDependencies: { 'expect.js': '~0.2.0', mocha: '~1.13.0' },
+104 silly publish   readme: '### Mediocre.js [![Alt ci](https://travis-ci.org/classdojo/mediocre.js.png)](https://travis-ci.org/classdojo/mediocre.js)\n\nMediocre is a lightweight JavaScript mediator. \n\n### Features\n\n- ability to add pre / post hooks\n- ability to call commands with options (see below)\n\n```javascript\nvar mediator = require("mediocre")();\n\nmediator.on("validate", function (message, next) {\n    for(var param in message.options) {\n      //validate fields against message.data\n    }\n});\n\n//login helper\nmediator.on("login", function (message, next) {\n  console.log(message.data);\n});\n\n\n//add pre-hook into login to validate fields\nmediator.on("pre login", { validate: { username: "string", password: "string" }});\n```\n\n\n## API\n\n### mediator.on(event, listeners...)\n\nadds a listener\n\n### mediator.execute(listener[, data][, callback])\n\nexecutes a command\n\n### message mediator.message(name[, data][, options])\n\ncreates a new message option to dispatch\n\n```javascript\nmediator.on("hello", function(message, options) {\n  console.log(message.options.message); // world!\n});\n\nmediator.on("sayHelloWorld", { hello: { message: "world!" }});\n\n//executes hello with options world\nmediator.execute(mediator.message("hello", null, { message: "world!" }));\n\n//same as above command\nmediator.execute("sayHelloWorld"); \n```\n',
+104 silly publish   bugs: { url: 'https://github.com/classdojo/mediocre.js/issues' },
+104 silly publish   _id: 'mediocre@0.0.2',
+104 silly publish   dist: { shasum: '17c54634387960a492340cd6dbb6e98671fea4c5' },
+104 silly publish   _from: '.' }
+105 verbose url raw mediocre
+106 verbose url resolving [ 'http://registry.npmjs.org/', './mediocre' ]
+107 verbose url resolved http://registry.npmjs.org/mediocre
+108 info trying registry request attempt 1 at 15:57:33
+109 http PUT http://registry.npmjs.org/mediocre
+110 http 409 http://registry.npmjs.org/mediocre
+111 verbose url raw mediocre
+112 verbose url resolving [ 'http://registry.npmjs.org/', './mediocre' ]
+113 verbose url resolved http://registry.npmjs.org/mediocre
+114 info trying registry request attempt 1 at 15:57:34
+115 http GET http://registry.npmjs.org/mediocre
+116 http 200 http://registry.npmjs.org/mediocre
+117 error publish fail Cannot publish over existing version.
+117 error publish fail Update the 'version' field in package.json and try again.
+117 error publish fail
+117 error publish fail If the previous version was published in error, see:
+117 error publish fail     npm help unpublish
+117 error publish fail
+117 error publish fail To automatically increment version numbers, see:
+117 error publish fail     npm help version
+118 error System Darwin 13.0.0
+119 error command "node" "/usr/local/bin/npm" "publish"
+120 error cwd /Users/craig/Developer/Public/mediocre.js
+121 error node -v v0.10.21
+122 error npm -v 1.3.11
+123 error code EPUBLISHCONFLICT
+124 verbose exit [ 1, true ]

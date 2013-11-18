@@ -3,6 +3,7 @@ factory            = require "./factory"
 listenerCollection = require "./factory/collection"
 type               = require "type-component"
 async              = require "async"
+bindableCall       = require "bindable-call"
 
 class Mediator
 
@@ -84,12 +85,21 @@ class Mediator
 
 
     chain = (listener.pre || []).concat(listener.callback || []).concat(listener.post || [])
+      
 
-    async.eachSeries chain, ((listener, next) ->
-      listener msg, next
-    ), (err) ->
-      return next(err) if err?
-      next null, msg.args...
+    call = bindableCall (next) ->
+      async.eachSeries chain, ((listener, next) ->
+        listener msg, next
+      ), (err) ->
+        return next(err) if err?
+        next null, msg.args...
+
+    call.bind("response").once().to((response) ->
+
+      next(response.error, response.data);
+    ).now()
+
+    call
 
 
   ###
