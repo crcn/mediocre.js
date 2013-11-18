@@ -87,19 +87,11 @@ class Mediator
     chain = (listener.pre || []).concat(listener.callback || []).concat(listener.post || [])
       
 
-    call = bindableCall (next) ->
-      async.eachSeries chain, ((listener, next) ->
-        listener msg, next
-      ), (err) ->
-        return next(err) if err?
-        next null, msg.args...
-
-    call.bind("response").once().to((response) ->
-
-      next(response.error, response.data);
-    ).now()
-
-    call
+    async.eachSeries chain, ((listener, next) ->
+      listener msg, next
+    ), (err) ->
+      return next(err) if err?
+      next null, msg.args...
 
 
   ###
