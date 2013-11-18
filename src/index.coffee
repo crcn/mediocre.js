@@ -3,7 +3,7 @@ factory            = require "./factory"
 listenerCollection = require "./factory/collection"
 type               = require "type-component"
 async              = require "async"
-bindableCall       = require "bindable-call"
+
 
 class Mediator
 
