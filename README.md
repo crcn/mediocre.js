@@ -1,6 +1,6 @@
 ### Mediocre.js [![Alt ci](https://travis-ci.org/classdojo/mediocre.js.png)](https://travis-ci.org/classdojo/mediocre.js)
 
-Mediocre is a lightweight JavaScript mediator. 
+Mediocre is a lightweight JavaScript mediator.
 
 ### Features
 
@@ -24,6 +24,15 @@ mediator.on("login", function (message, next) {
 
 //add pre-hook into login to validate fields
 mediator.on("pre login", { validate: { username: "string", password: "string" }});
+
+
+// spy on a message being executed
+mediator.spy({ redirect: /.*?/ }, function (message, listeners) {
+  message.once("success", function () {
+
+  });
+});
+
 ```
 
 
@@ -52,5 +61,5 @@ mediator.on("sayHelloWorld", { hello: { message: "world!" }});
 mediator.execute(mediator.message("hello", null, { message: "world!" }));
 
 //same as above command
-mediator.execute("sayHelloWorld"); 
+mediator.execute("sayHelloWorld");
 ```
