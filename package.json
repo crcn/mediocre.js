@@ -1,6 +1,6 @@
 {
   "name": "mediocre",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "- pre-hooks - post-hooks -",
   "main": "./lib/index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "async": "0.7.x",
     "protoclass": "0.0.x",
     "sift": "0.0.16",
-    "bindable": "0.6.x"
+    "bindable-object": "0.0.x"
   },
   "devDependencies": {
     "expect.js": "~0.2.0",
