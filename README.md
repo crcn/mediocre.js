@@ -1,3 +1,22 @@
+## Deprecated in favor of [mesh](https://github.com/mojo-js/mesh.js)
+
+```javascript
+var mesh = require("mesh");
+
+var dispatch = mesh.sequence(
+    mesh.accept("login", mesh.wrapCallback(function(operation, next) {
+    })
+);
+
+// pre-hook
+dispatch.unshift(mesh.accept("login", mesh.wrapCallback(function(operation, next) {
+});
+
+// post-hook
+dispatch.push(mesh.accept("login", mesh.wrapCallback(function(operation, next) {
+});
+```
+
 ### Mediocre.js [![Alt ci](https://travis-ci.org/classdojo/mediocre.js.png)](https://travis-ci.org/classdojo/mediocre.js)
 
 Mediocre is a lightweight JavaScript mediator.
